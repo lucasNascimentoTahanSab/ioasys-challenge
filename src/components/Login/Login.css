@@ -6,7 +6,12 @@
   justify-content: center;
   gap: 3rem;
   height: 100%;
-  margin-inline: 7.1875rem;
+  width: 100%;
+  padding-inline: 7.1875rem;
+  background-image: url('../../backgroundImage.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: 42%;
 }
 
 .Login__form {
@@ -17,6 +22,6 @@
 
 @media (max-width: 38rem) {
   .Login {
-    margin-inline: 1rem;
+    padding-inline: 1rem;
   }
 }

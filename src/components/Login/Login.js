@@ -3,23 +3,25 @@ import './Login.css'
 import Logo from '../Logo/Logo'
 import Input from '../Inputs/Input/Input'
 import InputSubmit from '../Inputs/InputSubmit/InputSubmit'
-import User from '../../schema/User'
 
-function Login() {
+function Login(props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [user, setUser] = useState(new User())
 
   function storeToken(token) {
     localStorage.setItem('token', token)
+  }
+
+  function sendUser(user) {
+    if (typeof props.sendUser === 'function') props.sendUser(user)
   }
 
   function login() {
     fetch('/login', { method: 'POST', headers: { 'Content-Type': 'application/json', }, body: JSON.stringify({ email: email.target.value, password: password.target.value }) })
       .then(res => res.json())
       .then(deserializedResponse => {
-        setUser(new User(deserializedResponse.user))
         storeToken(deserializedResponse.token)
+        sendUser(deserializedResponse.user)
       })
       .catch(error => { throw new Error(error) })
   }
