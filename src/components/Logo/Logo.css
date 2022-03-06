@@ -1,0 +1,17 @@
+@import url('../../index.css');
+
+.Logo {
+  display: flex;
+  align-items: center;
+  gap: 1.0375rem;
+  font-size: var(--font-size--bigger);
+  font-weight: var(--font-weight--light);
+}
+
+.Logo__title-light {
+  color: var(--color-first);
+}
+
+.Logo__title-dark {
+  color: var(--color-second);
+}
