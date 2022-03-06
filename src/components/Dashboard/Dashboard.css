@@ -10,3 +10,14 @@
   background-size: cover;
   transform: matrix(-1, 0, 0, -1, 0, 0) rotate(180deg);
 }
+
+.Dashboard__content {
+  margin: 2.5rem 7.1875rem;
+  width: calc(100% - 14.375rem);
+  height: calc(100% - 5rem);
+}
+
+.Dashboard__header {
+  display: flex;
+  justify-content: space-between;
+}

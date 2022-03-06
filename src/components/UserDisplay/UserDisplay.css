@@ -1,0 +1,9 @@
+@import url('../../index.css');
+
+.UserDisplay {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--font-size--small);
+  width: fit-content;
+}

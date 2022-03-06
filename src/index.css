@@ -53,3 +53,15 @@ body {
   line-height: var(--line-height--small);
   color: var(--color-second);
 }
+
+button {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.App__text--bold {
+  font-weight: var(--font-weight--high);
+}
