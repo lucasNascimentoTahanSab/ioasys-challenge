@@ -29,6 +29,7 @@ export default class Dashboard extends React.Component {
             <UserDisplay userName={this.user.name} />
           </header>
           <BookCollection
+            books={this.state.books}
             currentPage={this.currentPage}
             totalPages={this.totalPages}
             goToPreviousPage={this._goToPreviousPage.bind(this)}
