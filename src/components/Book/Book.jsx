@@ -1,5 +1,9 @@
 import './Book.css'
 
+/**
+ * React component for rendering each one of the book cards
+ * displayed at the library.
+ */
 function Book(props) {
   function getBookAuthors() {
     return props.book.authors.map(author => <p key={author}>{author}</p>)
