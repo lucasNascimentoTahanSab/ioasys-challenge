@@ -1,6 +1,6 @@
 import './Logo.css'
-import logo from '../../logo.svg'
-import logoDark from '../../logoDark.svg'
+import logo from '../../images/logo.svg'
+import logoDark from '../../images/logoDark.svg'
 
 function Logo(props) {
   return (

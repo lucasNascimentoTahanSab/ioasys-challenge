@@ -1,8 +1,8 @@
 import React from 'react'
-import previousDisabled from '../../previousDisabled.png'
-import nextDisabled from '../../nextDisabled.png'
-import previous from '../../previous.png'
-import next from '../../next.png'
+import previousDisabled from '../../images/previousDisabled.png'
+import nextDisabled from '../../images/nextDisabled.png'
+import previous from '../../images/previous.png'
+import next from '../../images/next.png'
 import './BookCollectionNavigation.css'
 
 export default class BookColectionNavigation extends React.Component {

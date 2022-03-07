@@ -1,4 +1,4 @@
-import logOut from '../../logOut.png'
+import logOut from '../../images/logOut.png'
 import './UserDisplay.css'
 
 function UserDisplay(props) {
