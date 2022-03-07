@@ -1,11 +1,16 @@
 import React from 'react'
-import User from '../../schema/User'
-import Book from '../../schema/Book'
+import Logo from '../Logo/Logo.jsx'
+import UserDisplay from '../UserDisplay/UserDisplay.jsx'
+import BookCollection from '../BookCollection/BookCollection.jsx'
+import User from '../../schema/User.js'
+import Book from '../../schema/Book.js'
+import utils from '../../utils/utils.js'
 import './Dashboard.css'
-import Logo from '../Logo/Logo'
-import UserDisplay from '../UserDisplay/UserDisplay'
-import BookCollection from '../BookCollection/BookCollection'
 
+/**
+ * React component for rendering the dashboard for book exhibiting
+ * porpuses. 
+ */
 export default class Dashboard extends React.Component {
   constructor(props) {
     super(props)
@@ -22,7 +27,7 @@ export default class Dashboard extends React.Component {
 
   render() {
     return (
-      <div className="Dashboard" >
+      <div className="Dashboard">
         <main className="Dashboard__content">
           <header className="Dashboard__header">
             <Logo displayDarkText />
@@ -40,7 +45,7 @@ export default class Dashboard extends React.Component {
   }
 
   _getLibrary() {
-    fetch(`/books?page=${this.currentPage}&amount=${this.booksByPage}`, { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` } })
+    fetch(`/books?page=${this.currentPage}&amount=${this.booksByPage}`, utils.getInitForGetRequests())
       .then(res => res.json())
       .then(library => this._setupLibrary(library))
       .catch(error => { throw new Error(error) })
@@ -53,6 +58,10 @@ export default class Dashboard extends React.Component {
     this._setupBooksInLibrary(library.data)
   }
 
+  /**
+   * Responsible for instantiating Books from books in library
+   * retrieved from the API.
+   */
   _setupBooksInLibrary(booksInLibrary) {
     if (!booksInLibrary?.length) return
 

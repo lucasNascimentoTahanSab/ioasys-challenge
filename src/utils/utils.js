@@ -10,7 +10,11 @@ const utils = {
       body: JSON.stringify({ email: body.email, password: body.password })
     }
   },
-
+  getInitForGetRequests() {
+    return {
+      headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+    }
+  }
 }
 
 export default utils

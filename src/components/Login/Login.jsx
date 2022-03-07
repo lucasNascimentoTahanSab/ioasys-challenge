@@ -34,13 +34,13 @@ function Login(props) {
   }
 
   return (
-    <div className="Login">
+    <main className="Login">
       <Logo />
       <div className="Login__form">
         <Input id="email" label="Email" onChange={setEmail.bind(this)} />
         <InputSubmit id="password" label="Senha" type="password" buttonLabel="Entrar" onChange={setPassword.bind(this)} onSubmit={login.bind(this)} />
       </div>
-    </div>
+    </main>
   )
 }
 
