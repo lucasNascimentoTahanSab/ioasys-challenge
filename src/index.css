@@ -77,6 +77,14 @@ button {
   font-size: var(--font-size--small);
 }
 
+.App__text--color-first {
+  color: var(--color-first);
+}
+
+.App__text--color-second {
+  color: var(--color-second);
+}
+
 .App__text--color-fourth {
   color: var(--color-fourth);
 }
