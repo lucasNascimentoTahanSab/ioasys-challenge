@@ -12,3 +12,9 @@
   display: flex;
   gap: .5rem;
 }
+
+@media (max-width: 42.6875rem) {
+  .BookColectionNavigation {
+    justify-content: center;
+  }
+}
