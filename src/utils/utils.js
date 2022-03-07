@@ -14,6 +14,12 @@ const utils = {
     return {
       headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
     }
+  },
+  storeToken(token) {
+    localStorage.setItem('token', token)
+  },
+  deleteToken() {
+    localStorage.removeItem('token')
   }
 }
 

@@ -9,7 +9,7 @@
 }
 
 @media (max-width: 42.6875rem) {
-  .UserDisplay__welcoming {
+  .UserDisplay__salutation {
     display: none;
   }
 }

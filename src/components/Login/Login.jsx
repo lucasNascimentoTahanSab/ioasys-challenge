@@ -15,10 +15,6 @@ function Login(props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  function storeToken(token) {
-    localStorage.setItem('token', token)
-  }
-
   function sendUser(user) {
     if (typeof props.sendUser === 'function') props.sendUser(user)
   }
@@ -27,7 +23,7 @@ function Login(props) {
     fetch('/auth/sign-in', utils.getInitForPostRequests({ email: email.target.value, password: password.target.value }))
       .then(res => res.json())
       .then(deserializedResponse => {
-        storeToken(deserializedResponse.token)
+        utils.storeToken(deserializedResponse.token)
         sendUser(deserializedResponse.user)
       })
       .catch(error => { throw new Error(error) })
