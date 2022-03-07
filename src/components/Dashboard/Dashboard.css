@@ -12,6 +12,9 @@
 }
 
 .Dashboard__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
   margin: 2.5rem 7.1875rem;
   width: calc(100% - 14.375rem);
   height: calc(100% - 5rem);

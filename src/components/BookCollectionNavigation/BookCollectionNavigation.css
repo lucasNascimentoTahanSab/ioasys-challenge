@@ -1,0 +1,14 @@
+@import url('../../index.css');
+
+.BookColectionNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  font-size: var(--font-size--small);
+}
+
+.BookColectionNavigation__buttons {
+  display: flex;
+  gap: .5rem;
+}
