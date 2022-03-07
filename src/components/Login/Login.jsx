@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Logo from '../Logo/Logo.jsx'
-import Input from '../Inputs/Input/Input.jsx'
-import InputSubmit from '../Inputs/InputSubmit/InputSubmit.jsx'
+import Input from '../Input/Input.jsx'
+import InputSubmit from '../InputSubmit/InputSubmit.jsx'
 import utils from '../../utils/utils.js'
 import './Login.css'
 
