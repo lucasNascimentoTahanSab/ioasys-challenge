@@ -5,16 +5,28 @@ import previous from '../../images/previous.png'
 import next from '../../images/next.png'
 import './BookCollectionNavigation.css'
 
+/**
+ * React component for rendering the library navigation controller for
+ * advancing to the next page or returning to the previous.
+ */
 export default class BookColectionNavigation extends React.Component {
   constructor(props) {
     super(props)
     this.state = { showMobileVersion: window.matchMedia('(max-width: 42.6875rem)').matches }
   }
 
+  /**
+   * I made use of resize listener at window to allow component changes in rendering
+   * as the screen shrinks or grows. 
+   */
   componentDidMount() {
     this.windowResizeListener = window.addEventListener('resize', this._changeNavigationConfiguration.bind(this))
   }
 
+  /**
+   * Here the resize listener at window is removed to avoid unexpected calls to its
+   * callback when this component is not being rendered.
+   */
   componentWillUnmount() {
     window.removeEventListener('resize', this.windowResizeListener)
   }
@@ -75,9 +87,7 @@ export default class BookColectionNavigation extends React.Component {
   }
 
   _goToPreviousPage() {
-    if (typeof this.props.goToPreviousPage === 'function' && this.props.currentPage !== 1) {
-      this.props.goToPreviousPage()
-    }
+    if (typeof this.props.goToPreviousPage === 'function' && this.props.currentPage !== 1) this.props.goToPreviousPage()
   }
 
   _goToNextPage() {
