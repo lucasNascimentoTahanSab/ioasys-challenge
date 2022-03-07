@@ -1,9 +1,16 @@
 import { useState } from 'react'
+import Logo from '../Logo/Logo.jsx'
+import Input from '../Inputs/Input/Input.jsx'
+import InputSubmit from '../Inputs/InputSubmit/InputSubmit.jsx'
+import utils from '../../utils/utils.js'
 import './Login.css'
-import Logo from '../Logo/Logo'
-import Input from '../Inputs/Input/Input'
-import InputSubmit from '../Inputs/InputSubmit/InputSubmit'
 
+/**
+ * React component responsible for rendering the login page,
+ * treating user email and password received in its inputs,
+ * senting login request to the Ioasys API and retrieving 
+ * user data and token.
+ */
 function Login(props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -17,7 +24,7 @@ function Login(props) {
   }
 
   function login() {
-    fetch('/auth/sign-in', { method: 'POST', headers: { 'Content-Type': 'application/json', }, body: JSON.stringify({ email: email.target.value, password: password.target.value }) })
+    fetch('/auth/sign-in', utils.getInitForPostRequests({ email: email.target.value, password: password.target.value }))
       .then(res => res.json())
       .then(deserializedResponse => {
         storeToken(deserializedResponse.token)
