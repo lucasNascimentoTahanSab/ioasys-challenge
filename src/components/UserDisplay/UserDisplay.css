@@ -1,0 +1,15 @@
+@import url('../../index.css');
+
+.UserDisplay {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--font-size--small);
+  width: fit-content;
+}
+
+@media (max-width: 42.6875rem) {
+  .UserDisplay__welcoming {
+    display: none;
+  }
+}

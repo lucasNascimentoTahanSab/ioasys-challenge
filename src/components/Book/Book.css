@@ -1,0 +1,56 @@
+@import url('../../index.css');
+
+.Book {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  height: calc(118.54px + 2.315rem);
+  padding: 1.1875rem 2rem 1.1875rem 1rem;
+  cursor: pointer;
+  background-color: var(--color-first);
+  line-height: var(--line-height--medium);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-card);
+  transition: .25s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Book:hover {
+  box-shadow: var(--box-shadow-card-hover);
+}
+
+.Book__image {
+  box-shadow: var(--box-shadow-card-image);
+}
+
+.Book__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Book__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.Book__authors {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.Book__specifications {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

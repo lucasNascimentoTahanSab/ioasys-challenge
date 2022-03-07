@@ -1,0 +1,15 @@
+@import url('../../index.css');
+
+.BookCollection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: 2.5rem 1rem;
+  width: 100%;
+}
+
+.BookCollection__books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1rem;
+}
