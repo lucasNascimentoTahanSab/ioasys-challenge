@@ -40,7 +40,7 @@ export default class Dashboard extends React.Component {
   }
 
   _getLibrary() {
-    fetch(`/dashboard?page=${this.currentPage}&amount=${this.booksByPage}`, { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` } })
+    fetch(`/books?page=${this.currentPage}&amount=${this.booksByPage}`, { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` } })
       .then(res => res.json())
       .then(library => this._setupLibrary(library))
       .catch(error => { throw new Error(error) })

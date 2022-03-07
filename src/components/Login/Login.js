@@ -17,7 +17,7 @@ function Login(props) {
   }
 
   function login() {
-    fetch('/login', { method: 'POST', headers: { 'Content-Type': 'application/json', }, body: JSON.stringify({ email: email.target.value, password: password.target.value }) })
+    fetch('/auth/sign-in', { method: 'POST', headers: { 'Content-Type': 'application/json', }, body: JSON.stringify({ email: email.target.value, password: password.target.value }) })
       .then(res => res.json())
       .then(deserializedResponse => {
         storeToken(deserializedResponse.token)
