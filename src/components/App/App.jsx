@@ -9,7 +9,7 @@ import './App.css'
  * when user is not logged in, or the dashboard page, after
  * user login.
  */
-function App() {
+function App(props) {
   const [user, setUser] = useState(new User())
   const [authenticated, setAuthenticated] = useState(localStorage.getItem('token'))
 
@@ -19,7 +19,9 @@ function App() {
   }
 
   function getPageToRender() {
-    return authenticated ? <Dashboard user={user} /> : <Login sendUser={setupUser.bind(this)} />
+    return authenticated
+      ? <Dashboard user={user} openBookModal={props.openBookModal} />
+      : <Login sendUser={setupUser.bind(this)} />
   }
 
   return (
