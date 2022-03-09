@@ -10,7 +10,7 @@ function Book(props) {
   }
 
   function openBookModal() {
-    if (typeof props.openBookModal === 'function') props.openBookModal()
+    if (typeof props.openBookModal === 'function') props.openBookModal(props.book)
   }
 
   return (

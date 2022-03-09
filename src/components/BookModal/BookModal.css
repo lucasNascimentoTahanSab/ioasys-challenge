@@ -1,12 +1,101 @@
+.BookModal__hide {
+  display: none;
+}
+
 .ReactModal__Overlay {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(.125rem);
 }
 
 .ReactModal__Content {
   display: flex;
-  inset: auto;
+  gap: 3rem;
+  inset: auto !important;
   width: 56vw;
   height: 79vh;
+  border: 0.25rem solid #FFFFFF !important;
+  border-radius: .25rem !important;
+  padding: 2.25rem 0 !important;
+  overflow: auto;
+}
+
+.BookModal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+.BookModal__details {
+  display: grid;
+  gap: 2rem;
+  padding-right: 2.25rem;
+  overflow-y: auto;
+}
+
+.BookModal__image {
+  margin-left: 2.25rem;
+  box-shadow: var(--box-shadow-modal-image);
+}
+
+.BookModal__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: var(--line-height--bigger);
+}
+
+.BookModal__information {
+  display: grid;
+  line-height: var(--line-height--medium);
+  gap: var(--line-height--medium);
+}
+
+.BookModal__information-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.BookModal__information-item__value {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.BookModal__information-quote {
+  margin-right: .40625rem;
+}
+
+@media (max-width: 68.125rem) {
+  .ReactModal__Content {
+    inset: 4rem 1rem 1rem 1rem !important;
+    width: calc(100vw - 2rem);
+    height: calc(100vh - 5rem);
+  }
+}
+
+@media (max-width: 42.6875rem) {
+  .ReactModal__Content {
+    flex-direction: column;
+    gap: 1.5rem;
+    inset: 4rem 1rem 1rem 1rem !important;
+    width: calc(100vw - 2rem);
+    height: calc(100vh - 5rem);
+    padding: 1.25rem 0 1.75rem 0 !important;
+  }
+
+  .BookModal__image {
+    margin-inline: 1.25rem;
+  }
+
+  .BookModal__details {
+    padding-inline: 1.25rem;
+    overflow-y: visible;
+  }
 }
