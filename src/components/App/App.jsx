@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import React from 'react'
 import Login from '../Login/Login.jsx'
 import Dashboard from '../Dashboard/Dashboard.jsx'
 import User from '../../schema/User.js'
+import utils from '../../utils/utils.js'
 import './App.css'
 
 /**
@@ -9,24 +10,33 @@ import './App.css'
  * when user is not logged in, or the dashboard page, after
  * user login.
  */
-function App(props) {
-  const [user, setUser] = useState(new User())
-  const [authenticated, setAuthenticated] = useState(localStorage.getItem('token'))
-
-  function setupUser(user) {
-    setUser(new User(user))
-    setAuthenticated(true)
+export default class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      user: new User(utils.getUser()),
+      authenticated: Boolean(utils.getToken())
+    }
   }
 
-  function getPageToRender() {
-    return authenticated
-      ? <Dashboard user={user} openBookModal={props.openBookModal} />
-      : <Login sendUser={setupUser.bind(this)} />
+  render() {
+    return (
+      <div className="App">{this._getPageToRender()}</div>
+    )
   }
 
-  return (
-    <div className="App">{getPageToRender()}</div>
-  )
+  _getPageToRender() {
+    return this.state.authenticated
+      ? <Dashboard user={this.state.user} openBookModal={this.props.openBookModal} />
+      : <Login sendUser={this._setupUser.bind(this)} />
+  }
+
+  _setupUser(user) {
+    utils.storeUser(user)
+
+    this.setState({
+      user: new User(user),
+      authenticated: true
+    })
+  }
 }
-
-export default App

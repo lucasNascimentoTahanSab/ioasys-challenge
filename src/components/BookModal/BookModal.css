@@ -1,0 +1,12 @@
+.ReactModal__Overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ReactModal__Content {
+  display: flex;
+  inset: auto;
+  width: 56vw;
+  height: 79vh;
+}
