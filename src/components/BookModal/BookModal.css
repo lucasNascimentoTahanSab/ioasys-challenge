@@ -1,13 +1,19 @@
-.BookModal__hide {
-  display: none;
-}
-
 .ReactModal__Overlay {
   display: flex;
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.4) !important;
   backdrop-filter: blur(.125rem);
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
 }
 
 .ReactModal__Content {
@@ -27,6 +33,13 @@
   top: 1rem;
   right: 1rem;
   z-index: 10;
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+}
+
+.BookModal__hide {
+  opacity: 0;
+  /* display: none; */
 }
 
 .BookModal__details {

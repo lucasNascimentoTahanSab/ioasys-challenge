@@ -7,7 +7,7 @@ ReactModal.setAppElement(document.getElementById('modal'))
 
 function BookModal(props) {
   function closeBookModal() {
-    if (typeof props.close === 'function') props.close()
+    if (typeof props.close === 'function') props.close(props.book)
   }
 
   function getBookAuthors() {
@@ -15,13 +15,16 @@ function BookModal(props) {
   }
 
   return (
-    <div className={props.isOpen ? "" : "BookModal__hide"}>
-      <button className="BookModal__close" onClick={closeBookModal.bind(this)} >
+    <div>
+      <button className={`BookModal__close ${props.isOpen ? '' : 'BookModal__hide'}`} onClick={closeBookModal.bind(this)} >
         <img src={close} alt="Close button." />
       </button>
       <ReactModal
         isOpen={props.isOpen}
-        shouldCloseOnEsc={true}>
+        shouldCloseOnEsc
+        shouldCloseOnOverlayClick={false}
+        onRequestClose={closeBookModal.bind(this)}
+        closeTimeoutMS={250}>
         <img className="BookModal__image" src={props.book.imageUrl} alt="Book cover." sizes="100%" />
         <article className="BookModal__details App__text--line-height--big">
           <header>
