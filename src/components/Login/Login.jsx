@@ -8,7 +8,7 @@ import './Login.css'
 /**
  * React component responsible for rendering the login page,
  * treating user email and password received in its inputs,
- * senting login request to the Ioasys API and retrieving 
+ * sending login request to the Ioasys API and retrieving 
  * user data and token.
  */
 function Login(props) {
