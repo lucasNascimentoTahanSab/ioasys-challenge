@@ -39,7 +39,7 @@
 
 .BookModal__hide {
   opacity: 0;
-  /* display: none; */
+  display: none;
 }
 
 .BookModal__details {
