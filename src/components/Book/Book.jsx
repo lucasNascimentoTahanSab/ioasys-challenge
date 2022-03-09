@@ -9,8 +9,12 @@ function Book(props) {
     return props.book.authors.map(author => <p key={author}>{author}</p>)
   }
 
+  function openBookModal() {
+    if (typeof props.openBookModal === 'function') props.openBookModal(props.book)
+  }
+
   return (
-    <div className="Book">
+    <div className="Book" onClick={openBookModal.bind(this)}>
       <img className="Book__image" src={props.book.imageUrl} alt="Book cover." width="81" height="118.54" />
       <section className="Book__details">
         <div>

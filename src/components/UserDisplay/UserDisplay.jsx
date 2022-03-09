@@ -9,6 +9,7 @@ import './UserDisplay.css'
 function UserDisplay(props) {
   function logout() {
     utils.deleteToken()
+    utils.deleteUser()
     window.location.href = '/'
   }
 

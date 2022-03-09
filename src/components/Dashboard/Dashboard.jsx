@@ -38,7 +38,8 @@ export default class Dashboard extends React.Component {
             currentPage={this.currentPage}
             totalPages={this.totalPages}
             goToPreviousPage={this._goToPreviousPage.bind(this)}
-            goToNextPage={this._goToNextPage.bind(this)} />
+            goToNextPage={this._goToNextPage.bind(this)}
+            openBookModal={this.props.openBookModal} />
         </main>
       </div>
     )

@@ -5,14 +5,12 @@ import BookModal from './components/BookModal/BookModal.jsx'
 import reportWebVitals from './reportWebVitals.js'
 import './index.css'
 
-const app = <App
-  openBookModal={openBookModal.bind(this)}
-  closeBookModal={closeBookModal.bind(this)} />
+const app = <App openBookModal={openBookModal.bind(this)} />
 
 ReactDOM.render(app, document.getElementById('root'))
 
 function openBookModal(book) {
-  const bookModal = <BookModal isOpen={true} book={book} />
+  const bookModal = <BookModal isOpen={true} close={closeBookModal.bind(this)} book={book} />
 
   ReactDOM.render(bookModal, document.getElementById('modal'))
 }

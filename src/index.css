@@ -21,6 +21,7 @@
   --line-height--small: 1rem;
   --line-height--medium: 1.25rem;
   --line-height--big: 1.5rem;
+  --line-height--bigger: 2.5rem;
 
   --color-first: #FFFFFF;
   --color-second: #333333;
@@ -32,10 +33,10 @@
   --box-shadow-card-hover: 0 1rem 5rem rgba(84, 16, 95, 0.32);
   --box-shadow-modal: 0 1rem 5rem rgba(0, 0, 0, 0.32);
   --box-shadow-card-image: 0 .375rem .5625rem rgba(0, 0, 0, 0.15);
-
-  --filter-book-modal: drop-shadow(0 .75rem 1.125rem rgba(0, 0, 0, 0.3));
+  --box-shadow-modal-image: 0 .75rem 1.125rem rgba(0, 0, 0, 0.3);
 
   --border-radius: .25rem;
+  --border-radius-scrollbar: 1.875rem;
 
   --margin--tiny: 1rem;
   --margin--big: 3rem;
@@ -69,12 +70,20 @@ button {
   font-weight: var(--font-weight--high);
 }
 
+.App__text--font-size--small {
+  font-size: var(--font-size--small);
+}
+
 .App__text--font-size--medium {
   font-size: var(--font-size--medium);
 }
 
-.App__text--font-size--small {
-  font-size: var(--font-size--small);
+.App__text--font-size--bigger {
+  font-size: var(--font-size--bigger);
+}
+
+.App__text--line-height--big {
+  line-height: var(--line-height--big);
 }
 
 .App__text--color-first {
@@ -91,4 +100,18 @@ button {
 
 .App__text--color-fifth {
   color: var(--color-fifth);
+}
+
+.App__text--line-height--medium {
+  line-height: var(--line-height--medium);
+}
+
+::-webkit-scrollbar {
+  width: .25rem;
+  height: .25rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: var(--border-radius-scrollbar);
+  background-color: var(--color-fourth);
 }

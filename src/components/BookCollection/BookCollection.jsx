@@ -8,7 +8,7 @@ import './BookCollection.css'
  */
 function BookCollection(props) {
   function getBooks() {
-    return props.books.map(book => <Book key={book.id} book={book} />)
+    return props.books.map(book => <Book key={book.id} book={book} openBookModal={props.openBookModal} />)
   }
 
   return (
