@@ -6,6 +6,12 @@ const ioasysRouter = require('./src/routes/ioasysRouter')
 
 const server = express()
 const port = process.env.PORT || 5000
+
+/**
+ * Here I'm using the express-session native MemoryStorage
+ * that is subjected to memory leak, but, given the time,
+ * I mantained it in production environment.
+ */
 const sessionInstance = session({
   secret: process.env.SESSION_SECRET,
   saveUninitialized: true,
