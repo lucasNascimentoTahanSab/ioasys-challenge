@@ -9,14 +9,18 @@ const app = <App openBookModal={openBookModal.bind(this)} />
 
 ReactDOM.render(app, document.getElementById('root'))
 
+/**
+ * These functions are needed for opening and closing modals
+ * for each one of the books displayed. 
+ */
 function openBookModal(book) {
-  const bookModal = <BookModal isOpen={true} close={closeBookModal.bind(this)} book={book} />
+  const bookModal = <BookModal isOpen close={closeBookModal.bind(this)} book={book} />
 
   ReactDOM.render(bookModal, document.getElementById('modal'))
 }
 
-function closeBookModal() {
-  const bookModal = <BookModal isOpen={false} />
+function closeBookModal(book) {
+  const bookModal = <BookModal close={closeBookModal.bind(this)} book={book} />
 
   ReactDOM.render(bookModal, document.getElementById('modal'))
 }

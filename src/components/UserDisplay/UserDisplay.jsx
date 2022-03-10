@@ -1,5 +1,4 @@
 import logOut from '../../images/logOut.png'
-import utils from '../../utils/utils.js'
 import './UserDisplay.css'
 
 /**
@@ -7,16 +6,14 @@ import './UserDisplay.css'
  * dashboard header, containing a salutation and logout button.
  */
 function UserDisplay(props) {
-  function logout() {
-    utils.deleteToken()
-    utils.deleteUser()
-    window.location.href = '/'
+  function signOut() {
+    fetch('/sign-out')
   }
 
   return (
     <div className="UserDisplay">
       <div className="UserDisplay__salutation">Bem vindo, <span className="App__text--bold">{props.userName}</span></div>
-      <button onClick={logout.bind(this)}>
+      <button onClick={signOut.bind(this)}>
         <img src={logOut} alt="Logout button." />
       </button>
     </div>

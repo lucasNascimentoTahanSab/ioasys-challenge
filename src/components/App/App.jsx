@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import React from 'react'
 import Login from '../Login/Login.jsx'
 import Dashboard from '../Dashboard/Dashboard.jsx'
 import User from '../../schema/User.js'
-import utils from '../../utils/utils.js'
 import './App.css'
 
 /**
@@ -10,26 +9,39 @@ import './App.css'
  * when user is not logged in, or the dashboard page, after
  * user login.
  */
-function App(props) {
-  const [user, setUser] = useState(new User(utils.getUser()))
-  const [authenticated, setAuthenticated] = useState(Boolean(utils.getToken()))
-
-  function setupUser(user) {
-    utils.storeUser(user)
-
-    setUser(new User(user))
-    setAuthenticated(true)
+export default class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      user: new User(),
+      authenticated: false
+    }
   }
 
-  function getPageToRender() {
-    return authenticated
-      ? <Dashboard user={user} openBookModal={props.openBookModal} />
-      : <Login sendUser={setupUser.bind(this)} />
+  componentDidMount() {
+    this._verifyIfUserIsLoggedIn()
   }
 
-  return (
-    <div className="App">{getPageToRender()}</div>
-  )
+  render() {
+    return (
+      <div className="App">{this._getPageToRender()}</div>
+    )
+  }
+
+  _getPageToRender() {
+    return this.state.authenticated
+      ? <Dashboard user={this.state.user} openBookModal={this.props.openBookModal} />
+      : <Login sendUser={this._setupUser.bind(this)} />
+  }
+
+  _verifyIfUserIsLoggedIn() {
+    fetch('/signed-in')
+      .then(res => res.json())
+      .then(data => this.setState({ user: new User(data.user), authenticated: data.authenticated }))
+      .catch(error => { throw error })
+  }
+
+  _setupUser(user) {
+    this.setState({ user: new User(user), authenticated: true })
+  }
 }
-
-export default App
