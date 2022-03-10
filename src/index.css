@@ -64,6 +64,23 @@ button {
   background: none;
   cursor: pointer;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+img {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .App__text--bold {
@@ -118,4 +135,8 @@ button {
 ::-webkit-scrollbar-thumb {
   border-radius: var(--border-radius-scrollbar);
   background-color: var(--color-fourth);
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
 }

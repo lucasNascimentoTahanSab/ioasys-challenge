@@ -104,11 +104,13 @@
   }
 
   .BookModal__image {
-    margin-inline: 1.25rem;
+    margin-right: 1.25rem;
+    margin-left: 1.25rem;
   }
 
   .BookModal__details {
-    padding-inline: 1.25rem;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
     overflow-y: visible;
   }
 }
