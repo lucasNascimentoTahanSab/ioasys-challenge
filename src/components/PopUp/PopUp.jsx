@@ -1,5 +1,9 @@
 import './PopUp.css'
 
+/**
+ * React component for rendering pop-up in login form for
+ * showing possible errors.
+ */
 function PopUp(props) {
   return (
     <div className={`PopUp ${props.show ? 'PopUp--after-open' : 'PopUp--before-close'}`}>
