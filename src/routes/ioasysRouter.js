@@ -23,7 +23,6 @@ ioasysRouter.get('/signed-in', (req, res) => {
  * storage.
  */
 ioasysRouter.get('/sign-out', (req, res) => {
-  console.log('Saindo...');
   req.session.destroy()
   res.redirect('/')
 })

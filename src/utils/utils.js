@@ -11,9 +11,7 @@ const utils = {
     }
   },
   getInitForGetRequests() {
-    return {
-      headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
-    }
+    return { method: 'GET' }
   }
 }
 
