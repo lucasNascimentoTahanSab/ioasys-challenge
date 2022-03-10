@@ -1,0 +1,36 @@
+.PopUp {
+  position: absolute;
+  top: 9.5rem;
+  display: grid;
+  width: fit-content;
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
+}
+
+.PopUp--after-open {
+  opacity: 1;
+}
+
+.PopUp--before-close {
+  opacity: 0;
+  display: none;
+}
+
+.PopUp__arrow {
+  position: relative;
+  left: 1rem;
+  width: 0; 
+  height: 0; 
+  border-left: .5rem solid transparent;
+  border-right: .5rem solid transparent;
+  border-bottom: .5rem solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(.125rem);
+}
+
+.PopUp__message {
+  width: fit-content;
+  border-radius: var(--border-radius);
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(.125rem);
+  padding: 1rem;
+}

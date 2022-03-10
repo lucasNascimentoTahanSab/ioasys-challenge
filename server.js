@@ -1,4 +1,5 @@
 require('dotenv/config')
+const path = require('path')
 const express = require('express')
 const session = require('express-session')
 const ioasysRouter = require('./src/routes/ioasysRouter')
@@ -16,6 +17,11 @@ server.use(sessionInstance)
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
 server.use('/', ioasysRouter)
+
+if (process.env.NODE_ENV === 'production') {
+  server.use(express.static(path.resolve(__dirname, 'build')))
+  server.get('*', (req, res) => res.send(path.resolve(__dirname, 'build', 'index.html')))
+}
 
 server.listen(port, err => {
   if (err) throw err
