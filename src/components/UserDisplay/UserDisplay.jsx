@@ -1,4 +1,5 @@
 import logOut from '../../images/logOut.png'
+import utils from '../../utils/utils.js'
 import './UserDisplay.css'
 
 /**
@@ -7,7 +8,9 @@ import './UserDisplay.css'
  */
 function UserDisplay(props) {
   function signOut() {
-    fetch('/sign-out')
+    fetch('/sign-out', utils.getInitForGetRequests())
+      .then(() => { window.location.reload() })
+      .catch(error => { throw error })
   }
 
   return (

@@ -10,7 +10,7 @@ import './Login.css'
  * React component responsible for rendering the login page,
  * treating user email and password received in its inputs,
  * sending login request to the Ioasys API and retrieving 
- * user data and token.
+ * user data.
  */
 function Login(props) {
   const [email, setEmail] = useState('')
