@@ -70,6 +70,10 @@ button {
   font-weight: var(--font-weight--high);
 }
 
+.App__text--bolder {
+  font-weight: var(--font-weight--higher);
+}
+
 .App__text--font-size--small {
   font-size: var(--font-size--small);
 }
