@@ -22,10 +22,7 @@ function Login(props) {
   function login() {
     fetch('/auth/sign-in', utils.getInitForPostRequests({ email: email.target.value, password: password.target.value }))
       .then(res => res.json())
-      .then(deserializedResponse => {
-        utils.storeToken(deserializedResponse.token)
-        sendUser(deserializedResponse.user)
-      })
+      .then(user => sendUser(user))
       .catch(error => { throw new Error(error) })
   }
 
@@ -34,7 +31,13 @@ function Login(props) {
       <Logo />
       <div className="Login__form">
         <Input id="email" label="Email" onChange={setEmail.bind(this)} />
-        <InputSubmit id="password" label="Senha" type="password" buttonLabel="Entrar" onChange={setPassword.bind(this)} onSubmit={login.bind(this)} />
+        <InputSubmit
+          id="password"
+          label="Senha"
+          type="password"
+          buttonLabel="Entrar"
+          onChange={setPassword.bind(this)}
+          onSubmit={login.bind(this)} />
       </div>
     </main>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App/App.jsx'
 import BookModal from './components/BookModal/BookModal.jsx'
-import reportWebVitals from './js/reportWebVitals.js'
+import reportWebVitals from './reportWebVitals.js'
 import './index.css'
 
 const app = <App openBookModal={openBookModal.bind(this)} />

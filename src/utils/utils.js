@@ -14,28 +14,6 @@ const utils = {
     return {
       headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
     }
-  },
-  storeToken(token) {
-    localStorage.setItem('token', token)
-  },
-  storeUser(user) {
-    const userSerialized = JSON.stringify(user)
-
-    localStorage.setItem('user', userSerialized)
-  },
-  deleteToken() {
-    localStorage.removeItem('token')
-  },
-  deleteUser() {
-    localStorage.removeItem('user')
-  },
-  getToken() {
-    return localStorage.getItem('token')
-  },
-  getUser() {
-    const user = localStorage.getItem('user')
-
-    return user ? JSON.parse(user) : null
   }
 }
 
